@@ -3,22 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título do Site</title>
+    <title>Cursos Grátis - Aprenda Programação</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <main>
         <header>
-            <h1> Cursos Grátis</h1>
+            <h1><i class="fas fa-graduation-cap"></i> Cursos Grátis</h1>
+            <p class="subtitle">Aprenda programação do zero, 100% gratuito!</p>
         </header>
-        <article>
-            <h2>Curso de Html5 com Css3</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laborum soluta similique nulla quae id totam vero, repudiandae at perspiciatis omnis minus nostrum iusto consequatur cum porro. Quae, maxime tempore!</p>
-        </article>
-        <article>
-            <h2>Curso de JavaScript</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ducimus saepe voluptates unde magnam necessitatibus aliquam quidem fugit fuga dolores omnis impedit incidunt rerum nobis, odit libero minus voluptatibus quo.</p>
-        </article>
+
+        <section class="intro">
+            <p>Domine as tecnologias mais usadas no mercado com cursos práticos, atualizados e com certificado digital ao final.</p>
+        </section>
+
+        <!-- Cursos -->
+        <div class="cursos-container">
+
+            <article class="curso-card">
+                <i class="fas fa-code curso-icon"></i>
+                <h2>Curso de HTML5 com CSS3</h2>
+                <p>Aprenda a criar sites modernos, responsivos e semânticos com as tecnologias fundamentais da web.</p>
+                <a href="#" class="btn">Acessar Curso</a>
+            </article>
+
+            <article class="curso-card">
+                <i class="fas fa-js-square curso-icon"></i>
+                <h2>Curso de JavaScript</h2>
+                <p>Domine a linguagem que dá vida aos sites: manipulação do DOM, eventos, funções e muito mais.</p>
+                <a href="#" class="btn">Acessar Curso</a>
+            </article>
+
+            <article class="curso-card">
+                <i class="fas fa-react curso-icon"></i>
+                <h2>React.js para Iniciantes</h2>
+                <p>Crie interfaces dinâmicas e componentes reutilizáveis com a biblioteca mais popular do mercado.</p>
+                <a href="#" class="btn">Acessar Curso</a>
+            </article>
+
+            <article class="curso-card">
+                <i class="fas fa-git-alt curso-icon"></i>
+                <h2>Git e GitHub na Prática</h2>
+                <p>Controle de versão, branches, pull requests e colaboração em equipe com projetos reais.</p>
+                <a href="#" class="btn">Acessar Curso</a>
+            </article>
+
+            <article class="curso-card">
+                <i class="fas fa-python curso-icon"></i>
+                <h2>Python para Iniciantes</h2>
+                <p>Aprenda lógica de programação e automação com uma das linguagens mais versáteis do mundo.</p>
+                <a href="#" class="btn">Acessar Curso</a>
+            </article>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Cursos Grátis. Todos os direitos reservados.</p>
+            <p>Feito com <i class="fas fa-heart"></i> para quem quer aprender de verdade.</p>
+        </footer>
     </main>
 </body>
 </html>
