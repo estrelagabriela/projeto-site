@@ -1,4 +1,5 @@
 /* Reset e base */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +15,12 @@ body {
 }
 
 main {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
-    background-color: #fff;
+    background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* Header */
@@ -32,11 +33,11 @@ header {
 
 header h1 {
     font-size: 2.8rem;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    margin-bottom: 8px;
 }
 
 header .subtitle {
@@ -49,26 +50,27 @@ header .subtitle {
 .intro {
     padding: 25px;
     text-align: center;
-    font-size: 1.1rem;
-    color: #555;
-    background-color: #f8f9fa;
+    background: #f8f9fa;
     border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 1.05rem;
 }
 
-/* Cursos */
+/* Container dos cursos */
 .cursos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 30px;
+    gap: 25px;
+    padding: 35px;
 }
 
+/* Card do curso */
 .curso-card {
     background: #fff;
-    border-radius: 12px;
-    padding: 25px;
+    border-radius: 14px;
+    padding: 28px;
     text-align: center;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #eaeaea;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -77,12 +79,12 @@ header .subtitle {
 .curso-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #007bff, #00c6ff);
+    height: 5px;
+    background: var(--cor-principal);
     transform: scaleX(0);
+    transform-origin: left;
     transition: transform 0.3s ease;
 }
 
@@ -91,54 +93,76 @@ header .subtitle {
 }
 
 .curso-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.15);
-    border-color: #007bff;
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+    border-color: var(--cor-principal);
 }
 
-.curso-icon {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 15px;
+/* Ícone circular com cor personalizada */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
+.curso-card:hover .icon-circle {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Cores por curso */
+.icon-circle.html   { background: linear-gradient(135deg, #e34c26, #f06529); --cor-principal: #e34c26; }
+.icon-circle.js     { background: linear-gradient(135deg, #f7df1e, #f0b90b); --cor-principal: #f7df1e; color: #000 !important; }
+.icon-circle.react  { background: linear-gradient(135deg, #61dafb, #00b5d8); --cor-principal: #61dafb; }
+.icon-circle.git    { background: linear-gradient(135deg, #f05032, #de2d1f); --cor-principal: #f05032; }
+.icon-circle.python { background: linear-gradient(135deg, #3776ab, #306998); --cor-principal: #3776ab; }
+
+/* Textos */
 .curso-card h2 {
-    font-size: 1.4rem;
-    color: #222;
+    font-size: 1.35rem;
     margin-bottom: 12px;
+    color: #222;
 }
 
 .curso-card p {
     font-size: 0.95rem;
     color: #666;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     line-height: 1.5;
 }
 
+/* Botão */
 .btn {
     display: inline-block;
-    background: #007bff;
+    background: var(--cor-principal, #007bff);
     color: white;
-    padding: 10px 20px;
+    padding: 11px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
     background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 25px;
-    background-color: #f8f9fa;
+    background: #f8f9fa;
     color: #777;
     font-size: 0.9rem;
     border-top: 1px solid #eee;
@@ -146,18 +170,20 @@ footer {
 
 footer i {
     color: #e91e63;
+    animation: pulse 2s infinite;
 }
 
-/* Responsividade */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Responsivo */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
     .cursos-container {
         grid-template-columns: 1fr;
         padding: 20px;
     }
-    .curso-card {
-        padding: 20px;
-    }
+    header h1 { font-size: 2.2rem; }
+    .icon-circle { width: 70px; height: 70px; font-size: 1.9rem; }
 }
